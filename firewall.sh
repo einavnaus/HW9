@@ -18,7 +18,7 @@ if [ -s total_packets.txt ]; then
 		cat current_packets.txt >> matched_pckts.txt
 
 	done <$1
-	echo -e "$(<matched_pckts.txt)" | sed '/^$/d' | tr -d ' ' | sort | uniq 
+	echo -e "$(<matched_pckts.txt)" | sed '/^$/d' | sort | uniq | tr -d ' ' | sort
 	rm matched_pckts.txt match_to_rule.txt current_packets.txt total_packets.txt 
 else
 	rm total_packets.txt 
